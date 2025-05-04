@@ -19,3 +19,12 @@ https://github.com/mozilla/geckodriver
 You need Tor Firefox
 
 Place paths and so on accordingly.
+
+The Tor Project is not useless but sadly discord blocks most of Tors IP's due to misuse.
+
+TOR_PATH = "./torbrowser/Tor Browser/Browser/firefox.exe"  # Adjust for your OS
+GECKODRIVER_PATH = "./geckodriver.exe"  # Adjust as needed
+
+place Toe and Geckodriver accordingly or changes pathes and so on.
+
+On Linux ofc use the linux executeable and changes the python script accordingly.
