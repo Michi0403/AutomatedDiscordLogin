@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ded3b402-2c82-40b7-9be7-e9d1973cfd89</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>PythonLoginAutomation.py</StartupFile>
+    <StartupFile>PythonLoginAutomationWithTorBrowser.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="PythonLoginAutomation.py" />
+    <Compile Include="PythonLoginAutomationWithTorBrowser.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="accounts.csv">
