@@ -13,13 +13,16 @@ def human_delay(min_time=1, max_time=5):
 def open_discord_sessions(csv_file):
     try:
         with open(csv_file, 'r', newline='') as file:
-            reader = csv.DictReader(file)
+            reader = csv.DictReader(file, delimiter='\t')
             for row in reader:
-                email = row['username']
-                password = row['password']
+                email = row['username'].strip()
+                password = row['password'].strip()
 
                 print(f"[INFO] Launching browser for: {email}")
-
+                # Debug: Print the raw credentials to check encoding or hidden characters
+                print(f"[DEBUG] Attempting login with:")
+                print(f"  Username: '{email}' (len={len(email)})")
+                print(f"  Password: '{password}' (len={len(password)})")
                 # Chrome incognito session
                 chrome_options = Options()
                 chrome_options.add_argument("--incognito")
