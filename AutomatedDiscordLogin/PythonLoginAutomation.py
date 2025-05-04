@@ -4,6 +4,11 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 import csv
 import time
+import random
+
+def human_delay(min_time=1, max_time=5):
+    delay = random.uniform(min_time, max_time)
+    time.sleep(delay)
 
 def open_discord_sessions(csv_file):
     try:
@@ -28,13 +33,13 @@ def open_discord_sessions(csv_file):
                 # Fill in email
                 email_field = driver.find_element(By.NAME, "email")
                 email_field.send_keys(email)
-
+                human_delay()
                 # Fill in password
                 password_field = driver.find_element(By.NAME, "password")
                 password_field.send_keys(password)
-
+                human_delay()
                 password_field.send_keys(Keys.RETURN)  # Press Enter to log in
-
+                human_delay()
                 print(f"[INFO] Login attempted for {email}")
                 time.sleep(10)  # Let the session load before moving on
 
