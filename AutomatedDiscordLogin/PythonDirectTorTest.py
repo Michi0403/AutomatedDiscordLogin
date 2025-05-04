@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -9,7 +10,13 @@ from stem import Signal
 from stem.control import Controller
 import tempfile
 import os
+import csv
+import time
+import random
 
+def human_delay(min_time=1, max_time=5):
+    delay = random.uniform(min_time, max_time)
+    time.sleep(delay)
 # Path to geckodriver and Tor Browser's Firefox binary
 TOR_PATH = "./torbrowser/Tor Browser/Browser/firefox.exe"  # Adjust for your OS
 GECKODRIVER_PATH = "./geckodriver.exe"  # Adjust as needed
@@ -51,9 +58,11 @@ driver = webdriver.Firefox(service=service, options=options)
 # Make sure Tor is running
 #change_tor_ip()
 
+time.sleep(5)  # Wait for page to load
 # Open Tor Browser
 driver.get("about:blank")
 
+time.sleep(5)  # Wait for page to load
 
 # Wait until the "Connect" button is visible and then click it
 try:
