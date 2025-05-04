@@ -178,3 +178,4 @@ cython_debug/
 /.vs/AutomatedDiscordLogin/v17
 /.vs/AutomatedDiscordLogin/FileContentIndex
 /.vs/AutomatedDiscordLogin/CopilotIndices/17.13.444.19527
+/AutomatedDiscordLogin/accounts.csv
